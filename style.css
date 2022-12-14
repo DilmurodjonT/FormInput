@@ -1,0 +1,24 @@
+.error-first {
+  display: block;
+}
+.error-first--hidden {
+  display: none;
+}
+.error-last {
+  display: block;
+}
+.error-last--hidden {
+  display: none;
+}
+.error-email {
+  display: block;
+}
+.error-email--hidden {
+  display: none;
+}
+.error-password {
+  display: block;
+}
+.error-password--hidden {
+  display: none;
+}
