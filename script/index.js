@@ -7,6 +7,8 @@ var $emailInput = document.getElementById("email-input");
 var $errorEmail = document.querySelector(".error-email");
 var $passwordInput = document.getElementById("password-input");
 var $errorPassword = document.querySelector(".error-password");
+var $btn = document.querySelector(".button");
+let $bark = document.querySelector(".bark");
 // console.log($form);
 
 var $resultFirst = document.getElementById("text1");
@@ -46,9 +48,35 @@ $passwordInput.addEventListener("input", function (e) {
   }
 });
 
-$form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  $resultFirst.textContent = $firstName.value;
-  $resultLast.textContent = $lastName.value;
-  $resultEmail.textContent = $emailInput.value;
-});
+// $form.addEventListener("submit", function (e) {
+//   e.preventDefault();
+//   $resultFirst.textContent = $firstName.value;
+//   $resultLast.textContent = $lastName.value;
+//   $resultEmail.textContent = $emailInput.value;
+// });
+
+var first = [];
+
+function seeName(array) {
+  $bark.innerHTML = "";
+  for (let i = 0; i < array.length; i++) {
+    let text = document.createElement("p");
+    text.textContent = array[i];
+
+    $bark.append(text);
+  }
+}
+
+seeName(first);
+
+function clickFunction() {
+  first.push($firstName.value);
+  $firstName.value = "";
+  $lastName.value = "";
+  $emailInput.value = "";
+  $passwordInput.value = "";
+  seeName(first);
+}
+
+$btn.addEventListener("click", clickFunction);
+// $form.addEventListener("submit", clickFunction);
